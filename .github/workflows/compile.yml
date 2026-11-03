@@ -2,7 +2,7 @@ name: Build Firmware
 on: [workflow_dispatch]
 jobs:
   build:
-    runs-packages: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Cache PlatformIO
@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: meshtastic-firmware
-          path: .pio/build/*/firmware.bin
+          path: .pio/build/**/firmware.bin
